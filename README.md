@@ -1,0 +1,1 @@
+Para atualizar as imagens e textos basta abrir o terminal e dar um "node index.js".

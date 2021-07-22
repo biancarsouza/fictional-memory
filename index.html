@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Alvorada | Versão 2</title>
+
+    </head>
+
+    <body>
+
+        <script>
+
+            (async() => {
+
+                const responseimg = await fetch('./instagramimg.json');
+                const dataimg = await responseimg.json();
+                const responsealt = await fetch('./instagramalt.json');
+                const dataalt = await responsealt.json();
+
+                const i = 6;
+
+                const itemimg = dataimg[i].src;
+                const itemalt = dataalt[i].alt;
+
+                const splited = itemalt.split("'");
+
+                console.log(itemimg);
+                console.log(splited[1]);
+
+                const text = `<p>${splited[1]}</p>`;
+                document.querySelector('.container').innerHTML = text;
+
+            })();
+
+        </script>
+
+    </body>
+
+</html>
